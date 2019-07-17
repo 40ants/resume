@@ -47,6 +47,7 @@ Roadmap
 * Add support for building binaries with ``https://shinmera.github.io/deploy/``.
 * Add a recipe for Homebrew.
 * Support themes.
+* Support automatic PDF rendering, probably by using the Pandoc.
 
 Credits
 -------
