@@ -1,0 +1,28 @@
+(defresume "Alexander Artemenko"
+  (:subtitle "Senior Software Developer")
+  
+  (:about "A senior developer looking for a crew of inspired and skillful engineers to build great products."
+          "I started my path as a C++ developer but switched to Python 11 years ago. I've used Python to build different kinds of services from internal identity management systems in a medium-size company (3,000-4,000 employees) to a b2b service Yandex Connect with DAU 100,000."
+          "I like to use and create opensource libraries and projects, you'll find dozens of them at my GitHub profile. Link is at the bottom of this page."
+          "A most important quality in each team member is his engagement with the project and the desire to improve it. This is the kind of team I'm looking for.")
+  
+  (:side-by-side
+   (:qualities
+    "Self-motivated"
+    "Product-oriented"
+    "Eager for new knowledge")
+   (:skills
+    ("C++" :years 5)
+    ("Python" :years 11)
+    ("Common Lisp" :years 5)))
+  
+  (:about
+   "If you have a distributed team and are looking for a skillful, product-oriented team member, please contact me:")
+  
+  (:centered
+   (:contacts
+    (:email "job@svetlyak.ru")
+    (:skype "svetyak40wt")
+    (:github "svetlyak40wt")
+    (:linkedin "svetlyak40wt")
+    (:twitter "svetyak40wt"))))
