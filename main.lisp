@@ -187,3 +187,7 @@
             (replace-type filename "html")
             :if-exists :supersede))
       (delete-package *package*))))
+
+
+(defun main ()
+  (format t "Hello world from resume!~%"))
