@@ -189,5 +189,6 @@
       (delete-package *package*))))
 
 
-(defun main ()
-  (format t "Hello world from resume!~%"))
+(defun main (&rest args)
+  (format t "Hello world from resume!~%")
+  (format t "Args: ~A%" args))

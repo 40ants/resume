@@ -10,5 +10,7 @@
   :author "Alexander Artemenko <svetlyak.40wt@gmail.com>"
   :license "BSD"
   :class :package-inferred-system
-  :version (:read-file-line "ChangeLog.rst" :at search-version-in-changelog)
+  :version (:read-file-line "ChangeLog.rst"
+            :at search-version-in-changelog)
+  :homepage "https://github.com/40ants/resume"
   :depends-on ("resume/main"))
