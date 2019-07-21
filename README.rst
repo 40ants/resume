@@ -37,11 +37,20 @@ Installation
 On OSX you can install from the Homebrew::
 
   brew tap 40ants/soft
+
+or::
+
+  brew tap 40ants/resume https://github.com/40ants/resume
+
+next::
+
   brew install resume
 
 Also, you can build it using Qlot and Roswell::
 
   qlot exec ros run --eval '(ql:quickload :resume)' --eval '(asdf:make :resume)'
+  
+  bin/resume --help
 
 Or plain SBCL::
 

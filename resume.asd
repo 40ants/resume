@@ -18,7 +18,8 @@
   :version (:read-file-line "ChangeLog.rst"
             :at search-version-in-changelog)
   :homepage "https://github.com/40ants/resume"
-  :depends-on ("resume/main")
+  :depends-on (;; "deploy"
+               "resume/main")
   ;; We need set this variable to suppress Deploy's output
   ;; about loading libraries and running hooks:
   :perform (compile-op :before (o c)

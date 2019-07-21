@@ -1,6 +1,7 @@
 (defpackage #:resume/main
   (:use #:cl)
   (:import-from #:lass)
+  ;; (:import-from #:slynk)
   (:import-from #:spinneret
                 #:with-html-string
                 #:with-html)
@@ -195,13 +196,22 @@
 
 (defmain main ((version "Show version information and exit."
                         :flag t)
+               (slynk "Start slynk server on 4005 port."
+                      :flag t)
                &rest filenames)
   (when version
     (format t "App:  ~A~%"
-            (asdf:component-version (asdf:find-system :resume))
-            )
+            (handler-case
+                (asdf:component-version (asdf:find-system :resume))
+              (error (c)
+                (uiop:print-backtrace :stream *error-output*
+                                      :condition c)
+                nil)))
     (princ (get-cl-info))
     (uiop:quit))
+
+  ;; (when slynk
+  ;;   (slynk:start-server 4005))
 
   (loop for filename in filenames
         do (let ((real-filename (probe-file filename)))
