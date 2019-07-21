@@ -8,8 +8,8 @@ class Resume < Formula
   depends_on "sbcl"
 
   resource "40ants-cl-info" do
-    url "http://dist.ultralisp.org/ultralisp/archive/4/40ants-cl-info-20190317210312.tgz"
-    sha256 "2346116c4285f836b5212c9d19312c86d6bf11dfe1bf1502d4cab353c741c820"
+    url "http://dist.ultralisp.org/ultralisp/archive/4/40ants-cl-info-20190721100812.tgz"
+    sha256 "90e0d192e70d18ef872818e38f01d09c1418c0fe98b7778c3daf97400c7b2e8b"
   end
 
   resource "40ants-defmain" do

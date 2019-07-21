@@ -2,7 +2,7 @@
  Resume Builder
 ================
 
-0.1.3 (2019-07-21)
+0.1.4 (2019-07-21)
 ==================
 
 * Move to a newer Ultralisp, where cl-info was fixed.
