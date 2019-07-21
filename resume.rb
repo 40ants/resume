@@ -1,8 +1,8 @@
 class Resume < Formula
   desc "A datadriven resume builder for people who are looking for a new job."
   homepage "https://github.com/40ants/resume"
-  url "https://github.com/40ants/resume/archive/v0.1.6.tar.gz"
-  sha256 "d7b89fd34852a4759f6a29a585a265a8f19e90f62b78920f56266281128c81c5"
+  url "https://github.com/40ants/resume/archive/v0.1.7.tar.gz"
+  sha256 "c12a564169ee270546f8ebbbaab0fee4d0f199c364a6682d6f7fddaae2b21d34"
   head NIL
 
   depends_on "sbcl"
