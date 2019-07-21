@@ -34,7 +34,20 @@ Here how resume's source can look like:
 Installation
 ------------
 
-Right now to use program, you need to load it into the REPL:
+On OSX you can install from the Homebrew::
+
+  brew tap 40ants/soft
+  brew install resume
+
+Also, you can build it using Qlot and Roswell::
+
+  qlot exec ros run --eval '(ql:quickload :resume)' --eval '(asdf:make :resume)'
+
+Or plain SBCL::
+
+  sbcl --eval '(ql:quickload :resume)' --eval '(asdf:make :resume)'
+
+And of cause you can load and use it in the REPL:
 
 .. code:: common-lisp
 
@@ -44,8 +57,6 @@ Right now to use program, you need to load it into the REPL:
 Roadmap
 -------
 
-* Add support for building binaries with ``https://shinmera.github.io/deploy/``.
-* Add a recipe for Homebrew.
 * Support themes.
 * Support automatic PDF rendering, probably by using the Pandoc.
 
