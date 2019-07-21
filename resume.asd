@@ -19,4 +19,3 @@
             :at search-version-in-changelog)
   :homepage "https://github.com/40ants/resume"
   :depends-on ("resume/main"))
-
