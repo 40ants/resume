@@ -1,8 +1,8 @@
 class Resume < Formula
   desc "A datadriven resume builder for people who are looking for a new job."
   homepage "https://github.com/40ants/resume"
-  url "https://github.com/40ants/resume/archive/v0.1.3.tar.gz"
-  sha256 "6006bafad0cf5477a13f218ac233757126127cc42dbb00b33ca7f54a48119b18"
+  url "https://github.com/40ants/resume/archive/v0.1.5.tar.gz"
+  sha256 "4cf605fb8b937d52300c7b3c0433deb6cd5a78fb44f9a8406e88754eaa4b7be3"
   head NIL
 
   depends_on "sbcl"
@@ -256,6 +256,6 @@ class Resume < Formula
     ENV["ASDF_OUTPUT_TRANSLATIONS"] = "/:/"
 
     system "sbcl", "--eval", "(require :asdf)", "--eval", "(handler-case (asdf:make :resume) (error () (uiop:quit 1)))"
-    bin.install "bin/*"
+    bin.install Dir["bin/*"]
   end
 end
