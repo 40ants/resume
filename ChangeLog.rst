@@ -2,6 +2,11 @@
  Resume Builder
 ================
 
+0.1.7 (2019-07-21)
+==================
+
+* Replaced ``find-system`` with ``registered-system``.
+
 0.1.6 (2019-07-21)
 ==================
 
