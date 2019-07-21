@@ -10,7 +10,13 @@
   :author "Alexander Artemenko <svetlyak.40wt@gmail.com>"
   :license "BSD"
   :class :package-inferred-system
+  :defsystem-depends-on (:deploy)
+  :build-operation "deploy-op"
+  :build-pathname "resume"
+  :entry-point "resume/main::main"
+
   :version (:read-file-line "ChangeLog.rst"
             :at search-version-in-changelog)
   :homepage "https://github.com/40ants/resume"
   :depends-on ("resume/main"))
+

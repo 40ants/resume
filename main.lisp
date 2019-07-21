@@ -6,6 +6,10 @@
                 #:with-html)
   (:import-from #:spinneret/cl-markdown)
   (:import-from #:alexandria)
+  (:import-from #:defmain
+                #:defmain)
+  (:import-from #:cl-info
+                #:get-cl-info)
   (:export
    #:render))
 (in-package resume/main)
@@ -189,6 +193,23 @@
       (delete-package *package*))))
 
 
-(defun main (&rest args)
-  (format t "Hello world from resume!~%")
-  (format t "Args: ~A%" args))
+(defmain main ((version "Show version information and exit."
+                        :flag t)
+               &rest filenames)
+  (when version
+    (format t "App:  ~A~%"
+            (asdf:component-version (asdf:find-system :resume))
+            )
+    (princ (get-cl-info))
+    (uiop:quit))
+
+  (loop for filename in filenames
+        do (let ((real-filename (probe-file filename)))
+             (cond
+               (real-filename
+                (format t "Rendering resume from ~A~%"
+                        filename)
+                (render real-filename))
+               (t (format t "File ~A was not found."
+                          filename)
+                  (uiop:quit 1))))))
