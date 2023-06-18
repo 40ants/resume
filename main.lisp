@@ -1,6 +1,7 @@
 (defpackage #:resume/main
   (:use #:cl)
   (:import-from #:lass)
+  (:import-from #:lass-flexbox)
   (:import-from #:spinneret
                 #:with-html-string
                 #:with-html)
@@ -57,12 +58,21 @@
             (format nil "Unhandled ~A ~A" type args))))
   (:method ((type (eql :side-by-side)) &rest args)
     (with-html
-      (:table :class "side-by-side"
-              (:tr (loop for arg in args
-                         do (:td (apply 'render arg)))))))
+      (:div :class "side-by-side"
+            (loop for arg in args
+                  do (:div :class "box"
+                           (apply 'render arg))))))
   (:method ((type (eql :subtitle)) &rest args)
     (with-html
       (:h2 :class "subtitle"
+           (first args))))
+  (:method ((type (eql :header)) &rest args)
+    (with-html
+      (:h3 :class "header"
+           (first args))))
+  (:method ((type (eql :subheader)) &rest args)
+    (with-html
+      (:h3 :class "subheader"
            (first args))))
   (:method ((type (eql :about)) &rest args)
     (with-html
@@ -85,6 +95,8 @@
                                  exp-years))))))
   (:method ((type (eql :contacts)) &rest args)
     (with-html
+      (:h3 :class "list-header"
+           "Contacts")
       (:table :class "contacts"
               (loop for contact in args
                     for contact-type = (first contact)
@@ -110,39 +122,58 @@
 
 
 (defun render-css ()
-  (lass:compile-and-write
-   '(body
-     :padding-left 10em
-     :padding-right 10em
-     :font-size 1.5rem
-     (.title
-      :text-align center
-      :font-size 3rem)
-     (.subtitle
-      :text-align center
-      :font-size 2rem)
-     (.list-header
-      :margin-left 2.5rem
-      :font-weight normal
-      :text-transform uppercase
-      :font-size 2rem)
-     (.contacts
+  (concatenate
+   'string
+   (lass:compile-and-write
+    '(body
+      :padding-left 10em
+      :padding-right 10em
       :font-size 1.5rem
-      (.label
-       :text-align right
+      (.title
+       :text-align center
+       :font-size 3rem)
+      (.subtitle
+       :text-align center
+       :font-size 2rem)
+      (.list-header
+       :margin-left 2.5rem
+       :font-weight normal
+       :text-transform uppercase
+       :font-size 2rem)
+      (.contacts
+       :font-size 1.5rem
+       (.label
+        :text-align right
+        :padding-right 1rem
+        ;; :border-right 1px solid gray
+        ))
+      (.centered
+       :width 30%
+       :margin-left auto
+       :margin-right auto)
+      (.for-print
+       :display none)
+      (.not-for-print
+       :display inline)
+      (.side-by-side :flexbox
+       :justify-content "space-around"
+       :align-items "flex-start"
+       :flex-wrap "wrap")
+      (ul
+       (li :font-size 2rem))))
+  
+   ;; For narrow screens:
+   (lass:compile-and-write
+    '(:media "(max-width: 800px)"
+      (body
+       :padding-left 1rem
        :padding-right 1rem
-       ;; :border-right 1px solid gray
-       ))
-     (.centered
-      :width 30%
-      :margin-left auto
-      :margin-right auto)
-     (.for-print
-      :display none)
-     (.not-for-print
-      :display inline)
-     (ul
-      (li :font-size 2rem)))))
+       :font-size 1.0rem
+
+       (.contacts
+        :font-size 1rem)
+       (ul
+        (li :font-size 1rem)))))))
 
 
 (defun render-printer-css ()
@@ -193,7 +224,7 @@
       (delete-package *package*))))
 
 
-(defmain main ((version "Show version information and exit."
+(defmain (main) ((version "Show version information and exit."
                         :flag t)
                &rest filenames)
   (when version

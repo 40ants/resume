@@ -47,10 +47,43 @@ body .not-for-print{
     display: inline;
 }
 
+body .side-by-side{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 
 
 body ul li{
     font-size: 2rem;
+}@media (max-width: 800px){
+    body{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.0rem;
+    }
+    body .contacts{
+        font-size: 1rem;
+    }
+    body ul li{
+        font-size: 1rem;
+    }
 }
   </style>
   <style>@media print{
@@ -70,31 +103,43 @@ body ul li{
  <body>
   <h1 class=title>Alexander Artemenko</h1>
   <h2 class=subtitle>Senior Software Developer</h2>
-  <div class=about><p>A senior developer looking for a crew of inspired and skillful engineers to build great products. </p><p>I started my path as a C++ developer but switched to Python 11 years ago. I've used Python to build different kinds of services from internal identity management systems in a medium-size company (3,000-4,000 employees) to a b2b service Yandex Connect with DAU 100,000. </p><p>I like to use and create opensource libraries and projects, you'll find dozens of them at my GitHub profile. Link is at the bottom of this page. </p><p>A most important quality in each team member is his engagement with the project and the desire to improve it. This is the kind of team I'm looking for. </p>
+  <div class=about><p>A senior developer is looking for a crew of inspired and skilful engineers to build great products. </p><p>I started my path as a C++ developer but switched to Python 11 years ago. Used Python to build different kinds of services from internal identity management systems in a medium-size company (3,000-4,000 employees) to a b2b service Yandex Connect with DAU 100,000. </p><p>I like to use and create opensource libraries and projects, you'll find dozens of them at <a href="https://github.com/svetlyak40wt">my GitHub profile</a>. </p><p>The essential quality of each team member is his engagement with the project and the desire to improve it. I want to become a team member where every person is highly motivated. </p>
   </div>
-  <table class=side-by-side>
-   <tr>
-    <td>
-     <h3 class=list-header>Qualities</h3>
-     <ul class=qualities>
-      <li>Self-motivated
-      <li>Product-oriented
-      <li>Eager for new knowledge
-     </ul>
-    <td>
-     <h3 class=list-header>Skills</h3>
-     <ul class=skills>
-      <li>C++ (5 years)
-      <li>Python (11 years)
-      <li>Common Lisp (5 years)
-     </ul>
-   
-  </table>
-  <div class=about><p>If you have a distributed team and are looking for a skillful, product-oriented team member, please contact me: </p>
+  <div class=side-by-side>
+   <div class=box>
+    <h3 class=list-header>Qualities</h3>
+    <ul class=qualities>
+     <li>Self-motivated
+     <li>Product-oriented
+     <li>Eager for new knowledge
+    </ul>
+   </div>
+   <div class=box>
+    <h3 class=list-header>Skills</h3>
+    <ul class=skills>
+     <li>C++ (5 years)
+     <li>Python (11 years)
+     <li>Common Lisp (7 years)
+     <li>Docker &amp; Devops tools (10 years)
+    </ul>
+   </div>
+  </div>
+  <h3 class=subheader>Experience at Yandex 2005-Present (15 years)</h3>
+  <div class=about><p>I started my career at Yandex as a C++ software developer but after a few years switched to the Python. Participated in many projects, have built external and internal web services. Some of them aren't available anymore. </p><p>Currently, I'm working on the improvement of our data analytics platform, building better tools for ETL process execution. Most technologies we use are closed source, but I worked on their integration with Jupyter Hub and Luigi. </p><p>The previous product I worked on is <a href="https://connect.yandex.com/">Yandex Connect</a>. I was a team lead on this project. It is a b2b product of Yandex, where we started to open and sell some of our internal tools to other companies. Yandex Connect is a "little brother" of the Google Apps for Domain. </p><p>Core technologies we've used in this project are Python, Flask and Postgresql. It was the most complex project I've ever done. My team and I built an API to provide information about companies and their structures. Also, we supported the integration with Yandex Mail service and DNS hosting. </p><p>The most exciting and valuable project I've worked on in Yandex is our identity management system. I've built it from scratch in close cooperation with our security team and a few product teams. The schedule was very tight because this system was a must-have requirement to let Yandex go to the IPO. This identity management system is alive and widely used across the company, providing access to almost any of our internal tools. </p>
+  </div>
+  <h3 class=subheader>Experience Before Yandex 2000-2005 (5 years)</h3>
+  <div class=about><p>Before Yandex, I've worked for 5 years as a C++ developer in <a href="https://cps.tver.ru/">this small software company</a>. We've built a tactical training system for the Russian Navy. I've worked on the core of our military simulator implementing the networking protocol to pass updates between the server and working stations. </p>
+  </div>
+  <h3 class=subheader>Opensource Projects</h3>
+  <div class=about><p>Besides lots of libraries both for Python and Common Lisp, I've created two large projects. </p><p>The first one is Allmychanges.com. It was the ChangeLog aggregator which was able to parse and extract release notes from web sites, repositories and Google Play and let you subscribe on them. I've developed this project for a few years. It was written in Python + MySQL on the backend and React on the frontend. </p><p>Allmychanges is down now because I've mostly switched my interest to the Common Lisp but don't have time for rewriting this web service. </p><p>My current effort is another opensource web service I've built for the Common Lisp community. It is a Quicklisp compatible software distribution - <a href="https://ultralisp.org">Ultralisp.org</a>. It is like <a href="https://pypi.org/">PyPi.org</a> but for publishing Common Lisp libraries in a few clicks. </p><p>Another current project is the "Common Lisp Project of the Day" series, published <a href="https://40ants.com/lisp-project-of-the-day/">in the blog</a> and on Twitter. Every day I'm choosing a random library and trying to describe how to use it. This content is especially useful if there is no documentation yet :) </p>
+  </div>
+  <h3 class=header>Final Words</h3>
+  <div class=about><p>I want to work in a distributed team and looking for skilful, product-oriented team members. </p><p>If you are looking for a passionate software developer, please contact me: </p>
   </div>
   <table class=centered>
    <tr>
     <td>
+     <h3 class=list-header>Contacts</h3>
      <table class=contacts>
       <tr>
        <td class=label>Email

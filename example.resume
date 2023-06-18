@@ -1,24 +1,52 @@
 (defresume "Alexander Artemenko"
   (:subtitle "Senior Software Developer")
   
-  (:about "A senior developer looking for a crew of inspired and skillful engineers to build great products."
-          "I started my path as a C++ developer but switched to Python 11 years ago. I've used Python to build different kinds of services from internal identity management systems in a medium-size company (3,000-4,000 employees) to a b2b service Yandex Connect with DAU 100,000."
-          "I like to use and create opensource libraries and projects, you'll find dozens of them at my GitHub profile. Link is at the bottom of this page."
-          "A most important quality in each team member is his engagement with the project and the desire to improve it. This is the kind of team I'm looking for.")
+  (:about "A senior developer is looking for a crew of inspired and skilful engineers to build great products."
+          "I started my path as a C++ developer but switched to Python 11 years ago. Used Python to build different kinds of services from internal identity management systems in a medium-size company (3,000-4,000 employees) to a b2b service Yandex Connect with DAU 100,000."
+          "I like to use and create opensource libraries and projects, you'll find dozens of them at [my GitHub profile](https://github.com/svetlyak40wt)."
+          "The essential quality of each team member is his engagement with the project and the desire to improve it. I want to become a team member where every person is highly motivated.")
   
   (:side-by-side
    (:qualities
     "Self-motivated"
     "Product-oriented"
     "Eager for new knowledge")
+   
    (:skills
     ("C++" :years 5)
     ("Python" :years 11)
-    ("Common Lisp" :years 5)))
-  
+    ("Common Lisp" :years 7)
+    ("Docker & Devops tools" :years 10)))
+
+  (:subheader "Experience at Yandex 2005-Present (15 years)")
   (:about
-   "If you have a distributed team and are looking for a skillful, product-oriented team member, please contact me:")
+   "I started my career at Yandex as a C++ software developer but after a few years switched to the Python. Participated in many projects, have built external and internal web services. Some of them aren't available anymore."
+   
+   "Currently, I'm working on the improvement of our data analytics platform, building better tools for ETL process execution. Most technologies we use are closed source, but I worked on their integration with Jupyter Hub and Luigi."
+
+   "The previous product I worked on is [Yandex Connect](https://connect.yandex.com/). I was a team lead on this project. It is a b2b product of Yandex, where we started to open and sell some of our internal tools to other companies. Yandex Connect is a \"little brother\" of the Google Apps for Domain."
+
+   "Core technologies we've used in this project are Python, Flask and Postgresql. It was the most complex project I've ever done. My team and I built an API to provide information about companies and their structures. Also, we supported the integration with Yandex Mail service and DNS hosting."
+   
+   "The most exciting and valuable project I've worked on in Yandex is our identity management system. I've built it from scratch in close cooperation with our security team and a few product teams. The schedule was very tight because this system was a must-have requirement to let Yandex go to the IPO. This identity management system is alive and widely used across the company, providing access to almost any of our internal tools.")
   
+  (:subheader "Experience Before Yandex 2000-2005 (5 years)")
+  (:about
+   "Before Yandex, I've worked for 5 years as a C++ developer in [this small software company](https://cps.tver.ru/). We've built a tactical training system for the Russian Navy. I've worked on the core of our military simulator implementing the networking protocol to pass updates between the server and working stations.")
+
+  (:subheader "Opensource Projects")
+  (:about
+   "Besides lots of libraries both for Python and Common Lisp, I've created two large projects."
+   "The first one is Allmychanges.com. It was the ChangeLog aggregator which was able to parse and extract release notes from web sites, repositories and Google Play and let you subscribe on them. I've developed this project for a few years. It was written in Python + MySQL on the backend and React on the frontend."
+   "Allmychanges is down now because I've mostly switched my interest to the Common Lisp but don't have time for rewriting this web service."
+   "My current effort is another opensource web service I've built for the Common Lisp community. It is a Quicklisp compatible software distribution - [Ultralisp.org](https://ultralisp.org). It is like [PyPi.org](https://pypi.org/) but for publishing Common Lisp libraries in a few clicks."
+   "Another current project is the \"Common Lisp Project of the Day\" series, published [in the blog](https://40ants.com/lisp-project-of-the-day/) and on Twitter. Every day I'm choosing a random library and trying to describe how to use it. This content is especially useful if there is no documentation yet :)")
+
+
+  (:header "Final Words")
+  (:about "I want to work in a distributed team and looking for skilful, product-oriented team members."
+          "If you are looking for a passionate software developer, please contact me:")
+
   (:centered
    (:contacts
     (:email "job@svetlyak.ru")

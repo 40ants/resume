@@ -1,2 +1,4 @@
 /quicklisp/
 /bin/
+.DS_Store
+.qlot/
