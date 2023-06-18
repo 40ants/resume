@@ -63,6 +63,17 @@ And of cause you can load and use it in the REPL:
    (ql:quickload :resume)
    (resume/main:render #P"example.resume")
 
+How to update Homebrew formula
+-----------------------------------------------------
+
+Update version in the changelog, add version tag like v0.1.8, push changes to GitHub: ``git push && git push --tags``.
+
+.. code:: bash
+
+   qlot exec .qlot/bin/cl-brewer resume
+
+Then copy brewer.rb formula to https://github.com/40ants/homebrew-soft repository.
+   
 Roadmap
 -------
 
